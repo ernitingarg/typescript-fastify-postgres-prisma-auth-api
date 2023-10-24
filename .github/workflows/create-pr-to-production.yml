@@ -1,0 +1,26 @@
+name: Generate Release Pull Request to production
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  gh-release-pr-generator:
+    name: gh-release-pr-generator
+    runs-on: ubuntu-20.04
+    env:
+      TZ: Asia/Tokyo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+        with:
+          go-version: ^1.17.1
+      - name: Install gh-release-pr-generator
+        run: go install github.com/nekonenene/gh-release-pr-generator@latest
+      - name: Run gh-release-pr-generator
+        run: gh-release-pr-generator --token ${{ secrets.GITHUB_TOKEN }} --repo-owner ${{ github.repository_owner }} --repo-name ${{ github.event.repository.name }} --dev-branch main --prod-branch production -template-path .github/pr-template/main

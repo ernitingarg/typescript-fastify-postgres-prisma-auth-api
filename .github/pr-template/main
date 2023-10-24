@@ -1,0 +1,5 @@
+Release to Production {{ .Year }}-{{ .Month }}-{{ .Date }} {{ .Hour }}:{{ .Minute }}
+# Pull Requests
+{{ range $i, $pull := .Pulls }}
+* {{ $pull.Title }} (#{{ $pull.Number }}) @{{ $pull.User.Login }}
+{{- end }}
