@@ -33,6 +33,12 @@ npx prisma init --datasource-provider postgresql
 npx prisma migrate dev --name init
 ```
 
+### Launch prisma studio
+
+```
+npx prisma studio
+```
+
 ## Run docker locally
 
 To run database directly inside container, please follow below steps:
