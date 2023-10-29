@@ -6,7 +6,6 @@ import {
 } from "./customer.service";
 import { CreateCustomerRequest, LoginRequest } from "./customer.schema";
 import { verifyPassword } from "../../utils/hash";
-import { server } from "../../app";
 
 export async function registerCustomerHandler(
   request: FastifyRequest<{
@@ -53,7 +52,7 @@ export async function loginHandler(
 
   // generate and return jwt token
   const { hashPassword, ...rest } = customer;
-  return { accessToken: server.jwt.sign(rest) };
+  return { accessToken: request.jwt.sign(rest) };
 }
 
 export async function getCustomersHandler() {
