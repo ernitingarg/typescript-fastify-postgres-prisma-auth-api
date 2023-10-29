@@ -14,10 +14,10 @@ CREATE TABLE "Customer" (
 CREATE TABLE "Product" (
     "id" SERIAL NOT NULL,
     "title" VARCHAR(50) NOT NULL,
-    "content" TEXT NOT NULL,
+    "content" TEXT,
     "price" DOUBLE PRECISION NOT NULL,
-    "createAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updateAt" TIMESTAMP(3) NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
     "ownerId" TEXT,
 
     CONSTRAINT "Product_pkey" PRIMARY KEY ("id")

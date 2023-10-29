@@ -12,13 +12,13 @@ npx tsc --init
 ### Dependencies
 
 ```
-npm install fastify fastify-zod zod zod-to-json-schema fastify-swagger fastify-jwt @prisma/client
+npm install fastify fastify-zod zod zod-to-json-schema fastify-swagger @fastify/jwt @prisma/client bcrypt
 ```
 
 ### Dev Dependencies
 
 ```
-npm install -D ts-node ts-node-dev typescript @types/node dotenv nodemon
+npm install -D ts-node ts-node-dev typescript @types/node dotenv nodemon @types/bcrypt
 ```
 
 ### Prisma Initialization

@@ -21,12 +21,12 @@ model Customer {
 }
 
 model Product {
-  id       Int       @id @default(autoincrement())
-  title    String    @db.VarChar(50)
-  content  String
-  price    Float
-  createAt DateTime  @default(now())
-  updateAt DateTime  @updatedAt
-  owner    Customer? @relation(fields: [ownerId], references: [id])
-  ownerId  String?
+  id        Int       @id @default(autoincrement())
+  title     String    @db.VarChar(50)
+  content   String?
+  price     Float
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  owner     Customer? @relation(fields: [ownerId], references: [id])
+  ownerId   String?
 }

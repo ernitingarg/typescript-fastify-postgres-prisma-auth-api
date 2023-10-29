@@ -20,15 +20,17 @@
   },
   "homepage": "https://github.com/ernitingarg/typescript-fastify-postgres-auth-microservice#readme",
   "dependencies": {
+    "@fastify/jwt": "^7.2.2",
     "@prisma/client": "^5.5.2",
+    "bcrypt": "^5.1.1",
     "fastify": "^4.24.3",
-    "fastify-jwt": "^4.2.0",
     "fastify-swagger": "^5.2.0",
     "fastify-zod": "^1.4.0",
     "zod": "^3.22.4",
     "zod-to-json-schema": "^3.21.4"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.1",
     "@types/node": "^20.8.9",
     "dotenv": "^16.3.1",
     "nodemon": "^3.0.1",
