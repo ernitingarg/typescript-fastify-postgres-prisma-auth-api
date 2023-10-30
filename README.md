@@ -12,7 +12,7 @@ npx tsc --init
 ### Dependencies
 
 ```
-npm install fastify fastify-zod zod zod-to-json-schema fastify-swagger @fastify/jwt @prisma/client bcrypt
+npm install fastify fastify-zod zod zod-to-json-schema @fastify/swagger @fastify/swagger-ui @fastify/jwt @prisma/client bcrypt
 ```
 
 ### Dev Dependencies
@@ -38,6 +38,14 @@ npx prisma migrate dev --name init
 ```
 npx prisma studio
 ```
+
+### App healthcheck
+
+http://localhost:5000/healthcheck
+
+### Swagger documentation
+
+http://localhost:5000/docs
 
 ## Run docker locally
 
