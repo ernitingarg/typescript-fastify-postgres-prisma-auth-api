@@ -8,6 +8,7 @@ import { productSchemas } from "./modules/product/product.schema";
 import fastifySwagger from "@fastify/swagger";
 import fastifySwaggerUi from "@fastify/swagger-ui";
 import { version } from "../package.json";
+import healthRoutes from "./modules/health/health.route";
 
 declare module "fastify" {
   interface FastifyRequest {
@@ -48,13 +49,9 @@ function buildServer() {
     }
   );
 
-  server.addHook("preHandler", (req, reply, next) => {
+  server.addHook("preHandler", (req, _reply, next) => {
     req.jwt = server.jwt;
     return next();
-  });
-
-  server.get("/healthcheck", async function () {
-    return { status: "OK" };
   });
 
   for (const schema of [...customerSchemas, ...productSchemas]) {
@@ -80,6 +77,7 @@ function buildServer() {
 
   server.register(fastifySwagger, swaggerOptions);
   server.register(fastifySwaggerUi, swaggerUiOptions);
+  server.register(healthRoutes, { prefix: "api/health" });
   server.register(customerRoutes, { prefix: "api/customers" });
   server.register(productRoutes, { prefix: "api/products" });
 

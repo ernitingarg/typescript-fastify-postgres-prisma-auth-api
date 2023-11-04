@@ -39,9 +39,10 @@ npx prisma migrate dev --name init
 npx prisma studio
 ```
 
-### App healthcheck
+### healthcheck
 
-http://localhost:5000/healthcheck
+http://localhost:5000/api/health
+http://localhost:5000/api/health/db
 
 ### Swagger documentation
 
