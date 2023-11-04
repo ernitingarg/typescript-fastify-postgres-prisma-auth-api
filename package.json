@@ -4,9 +4,12 @@
   "description": "```bash\r npm init -y",
   "main": "index.js",
   "scripts": {
-    "test": "tap",
+    "test": "tap --allow-incomplete-coverage",
     "start:dev": "nodemon src/app.ts",
-    "start:docker": "docker-compose up -d && npm run start:dev"
+    "start:db": "docker-compose up -d && npx prisma migrate deploy",
+    "start": "npm run start:db &&  npm run start:dev",
+    "lint": "eslint . --ext .ts --fix",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -37,7 +40,10 @@
     "@types/bcrypt": "^5.0.1",
     "@types/node": "^20.8.9",
     "@types/tap": "^15.0.10",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "dotenv": "^16.3.1",
+    "eslint": "^8.53.0",
     "nodemon": "^3.0.1",
     "sinon": "^17.0.1",
     "ts-node": "^10.9.1",

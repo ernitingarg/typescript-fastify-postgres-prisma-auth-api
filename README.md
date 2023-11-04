@@ -21,7 +21,7 @@ npm install @faker-js/faker tap ts-mock-imports
 
 ```
 npm install -D ts-node ts-node-dev typescript @types/node dotenv nodemon @types/bcrypt
-
+npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 npm install -D @types/tap sinon
 ```
 
@@ -63,10 +63,16 @@ To run database directly inside container, please follow below steps:
 
 - To change environment variables, please use [.env](.env.example) file
 
-- Run docker container
+- Run db docker container and app
+
+```base
+npm run start
+```
+
+- Run database docker container
 
 ```bash
-npm run start:docker
+npm run start:db
 ```
 
 - To stop docker container

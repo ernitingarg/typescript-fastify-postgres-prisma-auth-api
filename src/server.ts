@@ -31,7 +31,7 @@ declare module "@fastify/jwt" {
 
 function buildServer() {
   const server = Fastify({
-    logger: true,
+    logger: false,
   });
 
   server.register(fastifyJwt, {
