@@ -45,8 +45,8 @@ npx prisma studio
 
 ### healthcheck
 
-http://localhost:5000/api/health
-http://localhost:5000/api/health/db
+- http://localhost:5000/api/health
+- http://localhost:5000/api/health/db
 
 ### Swagger documentation
 
