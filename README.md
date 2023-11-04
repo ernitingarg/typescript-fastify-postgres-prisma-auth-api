@@ -13,12 +13,16 @@ npx tsc --init
 
 ```
 npm install fastify fastify-zod zod zod-to-json-schema @fastify/swagger @fastify/swagger-ui @fastify/jwt @prisma/client bcrypt
+
+npm install @faker-js/faker tap ts-mock-imports
 ```
 
 ### Dev Dependencies
 
 ```
 npm install -D ts-node ts-node-dev typescript @types/node dotenv nodemon @types/bcrypt
+
+npm install -D @types/tap sinon
 ```
 
 ### Prisma Initialization

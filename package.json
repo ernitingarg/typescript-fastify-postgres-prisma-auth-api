@@ -4,7 +4,7 @@
   "description": "```bash\r npm init -y",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tap",
     "start:dev": "nodemon src/app.ts",
     "start:docker": "docker-compose up -d && npm run start:dev"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ernitingarg/typescript-fastify-postgres-auth-microservice#readme",
   "dependencies": {
+    "@faker-js/faker": "^8.2.0",
     "@fastify/jwt": "^7.2.2",
     "@fastify/swagger": "^8.12.0",
     "@fastify/swagger-ui": "^1.10.1",
@@ -27,14 +28,18 @@
     "bcrypt": "^5.1.1",
     "fastify": "^4.24.3",
     "fastify-zod": "^1.4.0",
+    "tap": "^18.5.7",
+    "ts-mock-imports": "^1.3.8",
     "zod": "^3.22.4",
     "zod-to-json-schema": "^3.21.4"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.1",
     "@types/node": "^20.8.9",
+    "@types/tap": "^15.0.10",
     "dotenv": "^16.3.1",
     "nodemon": "^3.0.1",
+    "sinon": "^17.0.1",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
