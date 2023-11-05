@@ -15,4 +15,12 @@ async function main() {
   }
 }
 
+["SIGINT", "SIGTERM"].forEach((signal) => {
+  process.on(signal, async () => {
+    console.log("graceful shutdown");
+    await server.close();
+    process.exit(0);
+  });
+});
+
 main();
