@@ -9,6 +9,7 @@ import fastifySwagger from "@fastify/swagger";
 import fastifySwaggerUi from "@fastify/swagger-ui";
 import { version } from "../package.json";
 import healthRoutes from "./modules/health/health.route";
+import { logger } from "./utils/logger";
 
 declare module "fastify" {
   interface FastifyRequest {
@@ -31,7 +32,7 @@ declare module "@fastify/jwt" {
 
 function buildServer() {
   const server = Fastify({
-    logger: false,
+    logger: logger,
   });
 
   server.register(fastifyJwt, {
