@@ -1,3 +1,4 @@
+import fastify from "fastify";
 import buildServer from "./server";
 import env from "./utils/config";
 
@@ -14,5 +15,13 @@ async function main() {
     process.exit(1);
   }
 }
+
+["SIGINT", "SIGTERM"].forEach((signal) => {
+  process.on(signal, async () => {
+    console.log("graceful shutdown");
+    await server.close();
+    process.exit(0);
+  });
+});
 
 main();

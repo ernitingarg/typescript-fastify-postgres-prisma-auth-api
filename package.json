@@ -31,6 +31,8 @@
     "bcrypt": "^5.1.1",
     "fastify": "^4.24.3",
     "fastify-zod": "^1.4.0",
+    "pino": "^8.16.1",
+    "pino-pretty": "^10.2.3",
     "tap": "^18.5.7",
     "ts-mock-imports": "^1.3.8",
     "zod": "^3.22.4",
